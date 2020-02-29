@@ -14,9 +14,9 @@ public class Card {
         card = getCard;
     }
 
-    String getDescription(){
+    public String getDescription(){
 
-        String cardNotation[] = {
+        String  cardNotation[] = {
                 "AD", "AH", "AS", "AC",
                 "JD", "JH", "JS", "JC",
                 "QD", "QH", "QS", "QC",
@@ -47,14 +47,25 @@ public class Card {
                 "ten of diamonds", "ten of hearts", "ten of spades", "ten of clubs",
         };
 
+        boolean found = false;
+
         for (int i = 0; i < cardNotation.length ; i++) {
             for (int j = 1; j < cardValue.length; j++) {
                 if (card.equals(cardNotation[i])){
                     card = cardValue[i];
+                    found = true;
                 }
             }
         }
+
+        if (found == true){
         System.out.println(card);
+
+        }
+        else{
+            System.out.println("Unknown!");
+        }
+
         return card;
 
     }
