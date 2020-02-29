@@ -6,6 +6,7 @@ public class TimeDifference {
 
     public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
+        int hourDifference = 0;
 
         System.out.println("Please enter the first time in 24 hours:");
         String stringTime1 = input.next();
@@ -33,16 +34,27 @@ public class TimeDifference {
         int hour1 = time1 / 100;
         int hour2 = time2 / 100;
 
-        int hourDifference  = Math.abs(hour2 - hour1);
+        if (hour2 < hour1) {
+            int h1 = 24 - hour1;
+            int hourDifference1 = Math.abs(h1 + hour2);
 
-        int min1 = time1 % 100;
-        int min2 = time2 % 100;
+            int min1 = time1 % 100;
+            int min2 = time2 % 100;
 
-        int minuteDifference = Math.abs(min2 - min1);
+            int minuteDifference = Math.abs(min2 - min1);
 
-        System.out.println(hourDifference + " hours " + minuteDifference + " minutes");
+            System.out.println(hourDifference1 + " hour(s) " + minuteDifference + " minutes");
+        }
 
+        else{
+        hourDifference  = Math.abs(hour2 - hour1);
+            int min1 = time1 % 100;
+            int min2 = time2 % 100;
 
+            int minuteDifference = Math.abs(min2 - min1);
+
+            System.out.println(hourDifference + " hour(s) " + minuteDifference + " minutes");
+        }
 
     }
 }
