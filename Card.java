@@ -51,7 +51,6 @@ public class Card {
             for (int j = 1; j < cardValue.length; j++) {
                 if (card.equals(cardNotation[i])){
                     card = cardValue[i];
-                    break;
                 }
             }
         }
